@@ -1,14 +1,14 @@
 class Jeweler
   module Commands
     class BuildGem
-      attr_accessor :base_dir, :gemspec_helper, :file_utils, :version_helper
+      attr_accessor :base_dir, :gemspec_helper, :file_utils, :version
 
       def initialize
         self.file_utils = FileUtils
       end
 
       def run
-        gemspec_helper.update_version(version_helper)
+        gemspec_helper.update_version(version)
 
         gemspec = gemspec_helper.parse
 
@@ -27,7 +27,7 @@ class Jeweler
 
         command.base_dir = jeweler.base_dir
         command.gemspec_helper = jeweler.gemspec_helper
-        command.version_helper = jeweler.version_helper
+        command.version = jeweler.version
 
         command
       end

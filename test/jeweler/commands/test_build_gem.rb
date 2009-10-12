@@ -30,7 +30,7 @@ class Jeweler
           @command.base_dir = @base_dir
           @command.file_utils = @file_utils
           @command.gemspec_helper = @gemspec_helper
-          @command.version_helper = @version_helper
+          @command.version = @version_helper
 
           @command.run
         end
